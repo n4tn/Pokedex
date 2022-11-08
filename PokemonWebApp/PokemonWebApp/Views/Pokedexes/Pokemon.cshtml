@@ -1,0 +1,24 @@
+﻿@model PokemonWebApp.Models.Pokedex
+
+@{
+    ViewData["Title"] = "Pokemon";
+}
+
+<h1>@Html.DisplayFor(model => model.Name)</h1>
+ 
+<div class="card" style="width: 18rem;">
+    <img src="./Images/pikachu.png" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
+        <p class="card-text">
+            @Html.DisplayFor(model => model.Types)&nbsp
+            @Html.DisplayFor(model => model.Height)&nbsp
+            @Html.DisplayFor(model => model.Weight)&nbsp
+            @Html.DisplayFor(model => model.Gender)&nbsp
+            @Html.DisplayFor(model => model.Weakness)
+        </p>
+        <a href="#" class="btn btn-primary">@Html.DisplayFor(model => model.Evolution)</a>
+    </div>
+</div>
+
+
