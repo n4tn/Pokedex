@@ -1,23 +1,37 @@
 ﻿@{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Pokémon Pokédex";
 }
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Pokedex</h1>
+    <h1>Welcome to my Pokédex</h1>
 
-    <p>hello!</p>
-
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
+    <hr />
+    <section id="pokemon-overview">
+        <h2>A brief overview of Pokémon</h2>
+        <figure>
+            <blockquote class="blockquote">
+                <p>
+                    Pokémon, electronic game series from Nintendo that debuted in Japan in February 1996 as Pokémon Green and Pokémon Red. The franchise later became wildly popular in the United States and around the world. The series, originally produced for the company’s Game Boy line of handheld consoles, was introduced in 1998 to the United States with two titles, known to fans as Red and Blue. In the games, players assume the role of Pokémon trainers, obtaining cartoon monsters and developing them to battle other Pokémon. Pokémon became one of the most successful video game franchises in the world, second only to Nintendo’s Super Mario Bros.
+                    The original Pokémon is a role-playing game based around building a small team of monsters to battle other monsters in a quest to become the best. Pokémon are divided into types, such as water and fire, each with different strengths. Battles between them can be likened to the simple hand game rock-paper-scissors.
+                </p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                <cite title="Source Title">britannica</cite>
+            </figcaption>
+        </figure>
+    </section>
+    <hr />
+    
+    <h3> Type Search</h3>
+    <form asp-controller="Pokedexes" asp-action="Type" method="get">
+        <p>
+            Pick a Type: <input type="text" placeholder="Fire" value="@ViewData["GetType"]" name="searchstring" />
+            <input type="submit" value="search" />
+        </p>
+    </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

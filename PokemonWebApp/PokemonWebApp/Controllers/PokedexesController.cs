@@ -43,9 +43,10 @@ namespace PokemonWebApp.Controllers
         }
         // GET: /Pokedexes/Type/{searchstring} -- frontend
         [HttpGet]
-        [Route("/Pokedexes/Type/{searchstring}")]
+        //[Route("/Pokedexes/Type/{searchstring}")]
         public async Task<IActionResult> Type(string searchstring)
         {
+            ViewData["GetType"] = searchstring;
             if (searchstring == null || _context.Pokedex == null)
             {
                 return NotFound();
