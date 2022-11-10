@@ -27,9 +27,10 @@ namespace PokemonWebApp.Controllers
 
         // GET: /Pokedexes/Pokemon/{searchstring} -- frontend 
         [HttpGet]
-        [Route("/Pokedexes/Pokemon/{searchstring}")]
+        //[Route("/Pokedexes/Pokemon/{searchstring}")]
         public async Task<IActionResult> Pokemon(string searchstring)
         {
+            ViewData["GetPokemon"] = searchstring;
             if (searchstring == null || _context.Pokedex == null)
             {
                 return NotFound();
@@ -95,9 +96,10 @@ namespace PokemonWebApp.Controllers
 
         // GET: /Pokedexes/Weakness/{searchstring} -- frontend
         [HttpGet]
-        [Route("/Pokedexes/Weakness/{searchstring}")]
+        //[Route("/Pokedexes/Weakness/{searchstring}")]
         public async Task<IActionResult> Weakness(string searchstring)
         {
+            ViewData["GetWeakness"] = searchstring;
             if (searchstring == null || _context.Pokedex == null)
             {
                 return NotFound();
